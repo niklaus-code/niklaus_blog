@@ -148,7 +148,7 @@ class Blog(object):
             dict_info["content"] = item[2]
             dict_info["create_time"] = item[3]
             dict_info["category"] = item[4]
-            dict_info["signature"] = token.md5_method(token.b64(res[0][0]))
+            #dict_info["signature"] = token.md5_method(token.b64(res[0][0]))
         return dict_info
 
     def get_article_category(self, articleid):
