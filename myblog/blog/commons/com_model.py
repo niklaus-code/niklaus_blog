@@ -97,19 +97,12 @@ class Blog(object):
 
     def get_blog_category(self, category):
         sql = '''
-            SELECT id,title,content,author,create_time,like_number
-            from myblog_list WHERE id in (
-            SELECT article_id FROM article_class WHERE category_id=%d)
-            and status = 1
-            order by id desc
-            ''' % category
+            SELECT content,create_time,like_number from myblog_thoughts order by id desc
+            '''
 
         res = self.db.query(sql)
 
-        if len(res) > 0:
-            return res
-        else:
-            return False
+        return res
 
 
     def get_blog_title_id(self):
